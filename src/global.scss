@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Meddon&family=Montserrat:wght@300;400;600;700&family=Playfair+Display&display=swap");
+
+@layer base {
+  :root {
+    // dark
+    --clr-pry-1: #d9c0a2; // 0%
+    // --clr-pry-1: rgb(246, 139, 30); // 0%
+    --clr-pry-2: #2b2620; // 80%
+    --clr-pry-3: #413a31; // 70%
+
+    --clr-pry-7: rgba(43, 39, 33, 0.5); // 80%
+    --clr-pry-8: rgba(44, 39, 33, 0.8); // 80%
+    --clr-pry-9: rgb(212, 210, 207); // 80%
+
+    // light
+
+    --clr-pry-4: #fbf9f6; // 90%
+    --clr-pry-5: #f7f2ec; // 80%
+    --clr-pry-6: #f4ece3; // 70%
+
+    --font-size-1: clamp(4.5rem, 1rem + 3.8vw, 7.5rem);
+    --font-size-2: clamp(3rem, 1rem + 2.5vw, 4rem);
+    --font-size-3: clamp(2.5rem, 1rem + 2.5vw, 3.5rem);
+    --font-size-4: clamp(1.6rem, 1rem + 2vw, 2rem);
+    --logo-size-1: clamp(3rem, 3rem + 2vw, 5rem);
+
+    --transition: all 0.3s linear;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  // text-transform: capitalize;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  text-transform: capitalize;
+  font-family: "montserrat", "sans-serif";
+  color: var(--clr-pry-2);
+  position: relative;
+}
+
+.container {
+  width: min(100% - 10rem, 130rem);
+  margin-inline: auto;
+}
+
+.mb {
+  margin-bottom: 15rem;
+}
+.about-bg {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.about-bg::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  z-index: -1;
+  background-image: url("./images/tiller-bike.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1000px) {
+  html {
+    // font-size: 60%;
+  }
+
+  :root {
+    --font-size-1: clamp(4rem, 1rem + 2.5vw, 7.5rem);
+    --font-size-4: clamp(1.6rem, 0.5rem + 1.5vw, 2rem);
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    // font-size: 55%;
+  }
+  :root {
+    --logo-size-1: clamp(3rem, 3rem + 1vw, 5rem);
+  }
+}
+
+@media (max-width: 350px) {
+  :root {
+    --font-size-1: clamp(3rem, 1rem + 4.8vw, 7.5rem);
+    --font-size-2: clamp(2rem, 1rem + 2.5vw, 5rem);
+  }
+}
